@@ -1,0 +1,11 @@
+services:
+  api:
+    build: .
+    container_name: lanx-api
+    platform: linux/arm64
+    ports:
+      - "8383:8383"
+    env_file:
+      - .env
+    restart: unless-stopped
+    stop_grace_period: 15s
